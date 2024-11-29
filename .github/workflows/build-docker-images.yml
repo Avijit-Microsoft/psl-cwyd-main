@@ -20,8 +20,13 @@ on:
     - synchronize
   merge_group:
 
-jobs:
-  docker-build:
+jobs:  
+  sync:
+    runs-on: ubuntu-latest
+    steps: 
+        - name: logging
+          run: echo github.event.workflow_run.GITHUB_REF
+  docker-build:        
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     strategy:
       matrix:
