@@ -1,7 +1,7 @@
 """
 This module contains the entry point for the application.
 """
-
+ 
 import os
 import logging
 from azure.monitor.opentelemetry import configure_azure_monitor
